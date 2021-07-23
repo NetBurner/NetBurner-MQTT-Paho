@@ -65,7 +65,7 @@ void UserMain(void * pd) {
 		} else {
 			if (mqttSocket.mysock < 0) { // is TCP socket open?
 				// open socket to AWS
-				while (mqttSocket.connect("iot.eclipse.org",1883) != 0) {
+				while (mqttSocket.connect("mqtt.eclipseprojects.io",1883) != 0) {
 					// connection failure, keep trying
 					iprintf("Connection failure, retrying...\r\n");
 					OSTimeDly(TICKS_PER_SECOND * 15);
