@@ -28,6 +28,7 @@ void messageArrived(MQTT::MessageData& md)
 void UserMain(void * pd) {
 	init();
     iprintf("Application started\n");
+	WaitForActiveNetwork(TICKS_PER_SECOND * 5);   // Wait for DHCP address
 
     char name[32] = { 0 };
     MACADR macAddr = InterfaceMAC(GetFirstInterface());

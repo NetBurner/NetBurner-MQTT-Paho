@@ -30,6 +30,7 @@ void messageArrived(MQTT::MessageData& md)
 void UserMain(void * pd) {
 	init();
     iprintf("Application started\n");
+	WaitForActiveNetwork(TICKS_PER_SECOND * 5);   // Wait for DHCP address
 
     char name[32] = { 0 };
 	siprintf(name, "nb-%02X%02X",gConfigRec.mac_address[4], gConfigRec.mac_address[5]); // Name device "nb-(last 2 bytes of mac address)

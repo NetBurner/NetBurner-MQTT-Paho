@@ -25,7 +25,7 @@ public:
 
     void countdown_ms(int ms)
     {
-    	startTime = static_cast<int>(((TimeTick - startTime)/TICKS_PER_SECOND) * 1000); // convert to ms
+    	startTime = static_cast<int>((TimeTick/TICKS_PER_SECOND) * 1000); // convert to ms
     	delay = ms;
     }
 
@@ -38,7 +38,7 @@ public:
 
     int left_ms()
     {
-    	int time = static_cast<int>(((TimeTick - startTime)/TICKS_PER_SECOND) * 1000); // convert to ms
+    	int time = static_cast<int>((TimeTick/TICKS_PER_SECOND) * 1000); // convert to ms
     	return ((time-startTime) > delay) ? 0 : delay - (time-startTime);
     }
 
