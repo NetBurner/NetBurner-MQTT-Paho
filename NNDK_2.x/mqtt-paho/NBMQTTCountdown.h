@@ -10,19 +10,18 @@ private:
 
 
 public:
-	NBMQTTCountdown()
+    NBMQTTCountdown()
     {
        doneTick = 0;
        startTick = 0;
     }
 
-	NBMQTTCountdown(int ms)
+    NBMQTTCountdown(int ms)
     {
-		countdown_ms(ms);
+        countdown_ms(ms);
     }
 
-    ~NBMQTTCountdown() {
-    }
+    ~NBMQTTCountdown(){}
 
     bool expired()
     {
